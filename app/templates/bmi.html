@@ -1,0 +1,52 @@
+
+{% extends 'base_2.html' %}
+{% block content %}
+<div class="op">
+    <div class="container col-md-4 offset-ms-4">
+         <h2>ИМТ Калькулятор </h2>
+
+        <form method="POST" action="{% url 'bmi' %}">
+        {% csrf_token %}
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Введите свой рост</span>
+                    <input type="float" min="0" max="220" placeholder="Сантиметры" name="height">
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Введите свой вес</span>
+                    <input type="number" class="form-control"  placeholder="Килограммы"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="weight">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-dark btn-lg btn-lg">Рассчитать свой ИМТ</button> &nbsp;
+
+        </form>
+
+        <h2> {{xyz}} {{bmi}} {{ abc}}</h2>
+
+    </div>
+</div>
+
+    <style>
+.op {
+  min-height: 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  color: #000;
+  background-color: #fff; // цвет фона
+
+}
+    </style>
+
+
+
+
+
+
+
+
+
+{% endblock content %}

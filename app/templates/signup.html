@@ -1,0 +1,33 @@
+
+{% extends 'base_2.html' %}
+{% block content %}
+<div class="ser">
+<h2>Регистрация</h2>
+<div class="container">
+  <form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+
+    {% if form.errors %}
+      <p>В вашей форме есть ошибки</p>
+    {% endif %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="signup" class="btn-btn-secondary">
+
+  </form>
+</div>
+</div>
+
+    <style>
+.ser {
+  min-height: 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  color: #000;
+  background-color: #fff; // цвет фона
+
+}
+    </style>
+
+{% endblock content %}

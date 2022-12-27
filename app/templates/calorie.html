@@ -1,0 +1,78 @@
+{% extends 'base_2.html' %}
+{% block content %}
+<div class="su">
+<div class="col-md-6 offset-md-3">
+	<h2>Калькулятор Калорий </h2>
+	<br>
+	<form method="POST" action="{% url 'calorie' %}">
+    {% csrf_token %}
+        <div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Введите ваш вес</span>
+				<input type="number" class="form-control" placeholder="Килограмм" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "weight">
+			</div>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Введите ваш рост</span>
+				<input type="number" class="form-control" placeholder="Сантиметры" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "height">
+			</div>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Введите ваш возраст</span>
+				<input type="number" class="form-control" placeholder="Лет" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name = "age">
+			</div>
+		</div>
+
+
+        <div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-sm" name = "activity">Выберете ваш уровень активности</span>
+          <div class="form-group">
+						<select class="form-control" name="activity" id="exampleFormControlSelect1">
+								<option>Сидячий образ жизни</option>
+				  		        <option>Умеренная активность</option>
+				 			    <option>Средняя активность</option>
+				  		        <option>Высокая активность</option>
+						</select>
+					</div>
+			</div>	
+		</div>
+
+        <div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-sm" name = "gender">Выберите ваш пол</span>
+          <div class="form-group">
+						<select class="form-control" name="gender" id="exampleFormControlSelect1">
+								<option>Мужской</option>
+				  		        <option>Женский</option>
+						</select>
+					</div>
+			</div>
+		</div>
+
+
+
+        <div>
+			<button type="submit" class="btn btn-primary btn-dark btn-lg btn-lg">Рассчитать необходимое количество калорий</button>
+		</div>
+    </form>
+	<h1>{{ xyz }} {{ calories }} </h1>
+</div> 
+</div>
+    <style>
+.su {
+  min-height: 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  color: #000;
+  background-color: #fff; // цвет фона
+
+}
+    </style>
+
+
+{% endblock content %}
