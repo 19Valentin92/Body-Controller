@@ -40,7 +40,7 @@ def LoginPage(request):
 				login(request,user)
 				return redirect('index')
 			else:
-				messages.info(request,'Username or password is incorrect')
+				messages.info(request,'Пользователь или пароль не корректны')
 		context = {}
 		return render(request,'login.html',context)
 

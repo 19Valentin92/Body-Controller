@@ -23,6 +23,9 @@
 			<button type="submit" class="btn btn-primary btn-dark btn-lg">Войти</button>
 		</div>
 	</form>
+	{% for message in messages %}
+			<p id="messages">{{message}}</p>
+	{% endfor %}
 
 <p> Нет учетной записи? </p>
 <a href="{% url 'signup' %}">Зарегистрироваться</a>
